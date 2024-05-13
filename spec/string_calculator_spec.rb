@@ -38,5 +38,11 @@ RSpec.describe StringCalculator do
     it 'raises exception when string contains a negative number' do
       expect { StringCalculator.add('-1') }.to raise_error('negatives not allowed - (-1)')
     end
-  end  
+  end
+
+  context 'delimiters' do
+    it "returns 3 for the string '//;\n1;2'" do
+      expect(StringCalculator.add("//;\n1;2")).to eq(3)
+    end
+  end    
 end
