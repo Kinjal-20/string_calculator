@@ -23,4 +23,14 @@ RSpec.describe StringCalculator do
       expect(StringCalculator.add('100,10')).to eq(110)
     end
   end
+
+  context 'newline characters' do
+    it "returns 3 for the string '3\n,2'" do
+      expect(StringCalculator.add("3\n,2")).to eq(5)
+    end
+
+    it "returns 6 for the string '1\n5, 3'" do
+      expect(StringCalculator.add("1\n5, 3")).to eq(9)
+    end
+  end  
 end
